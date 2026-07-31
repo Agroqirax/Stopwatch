@@ -4,40 +4,39 @@ plugins {
 }
 
 android {
-    namespace = 'com.github.muellerma.stopwatch'
-    compileSdk = 36
+    namespace 'com.github.muellerma.stopwatch'
+    compileSdk 36
 
     defaultConfig {
-        applicationId = "com.github.muellerma.stopwatch"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 7
-        versionName = "1.6"
+        applicationId "com.github.muellerma.stopwatch"
+        minSdk 24
+        targetSdk 33
+        versionCode 7
+        versionName "1.6"
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.debug
-            minifyEnabled = true
-            shrinkResources = true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
         debug {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            applicationIdSuffix = ".debug"
+            applicationIdSuffix ".debug"
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-        encoding = "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        encoding "UTF-8"
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
         allWarningsAsErrors = true
     }
     lint {
-        abortOnError = false
+        abortOnError false
     }
 }
 
